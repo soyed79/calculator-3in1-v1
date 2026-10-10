@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3-in-1 Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="topbar">
+        <button class="mode-btn active" data-mode="normal">Normal</button>
+        <button class="mode-btn" data-mode="scientific">Scientific</button>
+        <button class="mode-btn" data-mode="dob">Date of Birth</button>
+      </div>
+
+      <div id="normal-panel" class="panel active">
+        <input id="normalDisplay" class="screen" type="text" readonly />
+        <div class="normal-grid">
+          <button class="clear" onclick="clearNormal()">C</button>
+          <button class="function" onclick="backspaceNormal()">⌫</button>
+          <button class="function" onclick="appendNormal('%')">%</button>
+          <button class="operator" onclick="appendNormal('/')">÷</button>
+
+          <button onclick="appendNormal('7')">7</button>
+          <button onclick="appendNormal('8')">8</button>
+          <button onclick="appendNormal('9')">9</button>
+          <button class="operator" onclick="appendNormal('*')">×</button>
+
+          <button onclick="appendNormal('4')">4</button>
+          <button onclick="appendNormal('5')">5</button>
+          <button onclick="appendNormal('6')">6</button>
+          <button class="operator" onclick="appendNormal('-')">−</button>
+
+          <button onclick="appendNormal('1')">1</button>
+          <button onclick="appendNormal('2')">2</button>
+          <button onclick="appendNormal('3')">3</button>
+          <button class="operator" onclick="appendNormal('+')">+</button>
+
+          <button onclick="appendNormal('00')">00</button>
+          <button onclick="appendNormal('0')">0</button>
+          <button onclick="appendNormal('.')">.</button>
+          <button class="equal" onclick="calculateNormal()">=</button>
+        </div>
+      </div>
+
+      <div id="scientific-panel" class="panel">
+        <input id="scientificDisplay" class="screen" type="text" readonly />
+        <div class="scientific-grid">
+          <button class="clear" onclick="clearScientific()">C</button>
+          <button class="function" onclick="backspaceScientific()">⌫</button>
+          <button class="function" onclick="appendScientific('^')">xʸ</button>
+          <button class="function" onclick="appendScientific('sqrt('">√</button>
+
+          <button class="function" onclick="appendScientific('sin(')">sin</button>
+          <button class="function" onclick="appendScientific('cos(')">cos</button>
+          <button class="function" onclick="appendScientific('tan(')">tan</button>
+          <button class="function" onclick="appendScientific('log(')">log</button>
+
+          <button onclick="appendScientific('7')">7</button>
+          <button onclick="appendScientific('8')">8</button>
+          <button onclick="appendScientific('9')">9</button>
+          <button class="operator" onclick="appendScientific('/')">÷</button>
+
+          <button onclick="appendScientific('4')">4</button>
+          <button onclick="appendScientific('5')">5</button>
+          <button onclick="appendScientific('6')">6</button>
+          <button class="operator" onclick="appendScientific('*')">×</button>
+
+          <button onclick="appendScientific('1')">1</button>
+          <button onclick="appendScientific('2')">2</button>
+          <button onclick="appendScientific('3')">3</button>
+          <button class="operator" onclick="appendScientific('-')">−</button>
+
+          <button onclick="appendScientific('0')">0</button>
+          <button onclick="appendScientific('.')">.</button>
+          <button class="operator" onclick="appendScientific('+')">+</button>
+          <button class="equal" onclick="calculateScientific()">=</button>
+        </div>
+      </div>
+
+      <div id="dob-panel" class="panel">
+        <div class="dob-box">
+          <div>
+            <label for="dobInput">Select Date of Birth</label>
+            <input id="dobInput" type="date" />
+          </div>
+          <button class="dob-calc-btn" onclick="calculateAge()">Calculate Age</button>
+          <div id="dobResult" class="dob-result">
+            Enter your date of birth to see your age details.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #e2e8f0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  width: min(100%, 1000px);
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.mode-btn,
+.dob-calc-btn,
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.1s ease, opacity 0.2s ease;
+}
+
+.mode-btn {
+  background: #334155;
+  color: white;
+}
+
+.mode-btn.active {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+}
+
+.panel {
+  display: none;
+}
+
+.panel.active {
+  display: block;
+}
+
+.screen {
+  width: 100%;
+  height: 80px;
+  background: #020817;
+  border: 1px solid #475569;
+  border-radius: 12px;
+  font-size: 2rem;
+  text-align: right;
+  padding: 20px;
+  margin-bottom: 20px;
+  outline: none;
+  color: #f8fafc;
+}
+
+.normal-grid,
+.scientific-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+button {
+  background: #1e293b;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.operator {
+  background: #f59e0b;
+  color: #111827;
+}
+
+.equal {
+  background: #10b981;
+}
+
+.clear {
+  background: #ef4444;
+}
+
+.function {
+  background: #8b5cf6;
+}
+
+.dob-box {
+  display: grid;
+  gap: 15px;
+  background: #111827;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid #374151;
+}
+
+.dob-box label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.dob-box input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #475569;
+  background: #0f172a;
+  color: white;
+  font-size: 1rem;
+}
+
+.dob-calc-btn {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+}
+
+.dob-result {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 15px;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+  .normal-grid,
+  .scientific-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
